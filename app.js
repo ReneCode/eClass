@@ -1,31 +1,31 @@
-(function () {
-  "use strict";
+"use strict";
 
-  var expat = require('node-expat')
-  var parser = new expat.Parser('UTF-8')
+var expat = require('node-expat');
+var eClassParser = require('./eClassParser.js');
 
-  var fs = require('fs');
+var parser = new expat.Parser('UTF-8');
 
-  parser.on('startElement', function (name, attrs) {
-    console.log("start:" + name, attrs)
-  })
+var fs = require('fs');
 
-  parser.on('endElement', function (name) {
-    console.log("end:" + name)
-  })
+var filename = "./data/ESPRIT-reformat.xml";
+var filename = "./data/data.xml";
 
-  parser.on('text', function (text) {
-    console.log("text:" + text)
-  })
+parser.on('startElement', function (name, attrs) {
+	eClassParser.startElement(name, attrs);
+})
 
-  parser.on('error', function (error) {
-    console.error(error)
-  })
+parser.on('endElement', function (name) {
+	eClassParser.endElement(name);
+})
+
+parser.on('text', function (text) {
+	eClassParser.text(text);
+})
+
+parser.on('error', function (error) {
+	console.error(error);
+})
 
 
-  fs.createReadStream("./data/ESPRIT-reformat.xml").pipe(parser);
-
-  //parser.write('<html><head><title>Hello World</title></head><body><p>Foobar</p></body></html>')
-
-}())
+fs.createReadStream(filename).pipe(parser);
 
