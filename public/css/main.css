@@ -1,0 +1,30 @@
+body {
+	font-family: arial;
+	font-size: 14px;
+}
+
+ul {
+	padding-left: 10px;
+}
+
+li:hover {
+	background-color: #ddd;
+	cursor: pointer;
+}
+
+li {
+	list-style: none;
+	padding: 0px;
+}
+
+li > span.name {
+	position: absolute;
+	display: inline;
+	left: 100px;
+}
+
+li > span.value {
+	position: absolute;
+	display: inline;
+	left: 600px;
+}

@@ -1,0 +1,11 @@
+extends layout
+
+block content
+
+	h3 Content
+
+	ul
+		each val in subnode
+			li #{val.ftid}
+				span.name #{val.ftname}
+				span.value #{val.fvalues}

@@ -1,31 +1,28 @@
-"use strict";
-
-var expat = require('node-expat');
-var eClassParser = require('./eClassParser.js');
-
-var parser = new expat.Parser('UTF-8');
-
-var fs = require('fs');
-
-var filename = "./data/ESPRIT-reformat.xml";
-var filename = "./data/data.xml";
-
-parser.on('startElement', function (name, attrs) {
-	eClassParser.startElement(name, attrs);
-})
-
-parser.on('endElement', function (name) {
-	eClassParser.endElement(name);
-})
-
-parser.on('text', function (text) {
-	eClassParser.text(text);
-})
-
-parser.on('error', function (error) {
-	console.error(error);
-})
 
 
-fs.createReadStream(filename).pipe(parser);
+var express = require('express');
+var http = require('http');
+var path = require('path');
+var route = require('./routes/route.js');
+var app = express();
 
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+app.use(express.logger('dev'));
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(app.router);
+
+if ('development' == app.get('env')) {
+	app.use(express.errorHandler());
+}
+
+route(app);
+
+var port = app.get('port');
+http.createServer(app).listen(port, function() {
+	console.log("Express server listening on port " + port);
+});
+
+console.log('eClass started');
