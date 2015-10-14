@@ -110,7 +110,7 @@ var eClassParser = function (callback) {
 			node.valueIdRef = valueIdRef;
 		}
 		if (fvalueDetails) {
-			node.fvalueDetails = fvalueDetails;
+			node.fvalues = fvalueDetails;
 		}
 		if (funit) {
 			node.funit = funit;

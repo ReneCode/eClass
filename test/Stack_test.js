@@ -76,6 +76,14 @@ describe('Stack', function() {
 			assert.deepEqual(['a', 42, 'x'], s.asList());
 		});
 
+		it('should return list joined as string', function() {
+			var s = new Stack();
+			s.push(5);
+			s.push(6);
+			s.push(8);
+			assert.equal('5.6.8', s.asList().join('.'));
+		});
+
 	});
 
 })

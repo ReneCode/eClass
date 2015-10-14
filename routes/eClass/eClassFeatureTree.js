@@ -1,32 +1,63 @@
 var EClassNode = require('./eClassNode.js')
-
+var Stack = require('./Stack.js');
 
 
 var eClassFeatureTree = function() {
-	var level = EClassNodeLevel();
-	var stackParentId = Stack();
+	var level 
+
+	this.incrementCurrentLevel = function() {
+		var tmp = level.top();
+		tmp++;
+		level.pop();
+		level.push(tmp);
+	}
 
 	this.create = function(list) {
-		var root = new EClassNode(0,0,"ROOT", "ROOT");
+		var root = new EClassNode(-1,0,"ROOT", "ROOT");
 		var lastFeature = root;
+		var stackParentId = new Stack();
+		level = new Stack();
 
-		list.forEach( function(f) {
-			if (lastFeature.id == f.parentId)
+		for (var i=0; i<list.length; i++) {
+			var f = list[i];
 
-			if (f.parentId == -1) {
-				console.dir(f);
-				root.addSubNode(f);
+
+			console.log(level.asList().join());
+			if (lastFeature.id == f.parentId) {
+				// one level below
+				level.push(1);
+				stackParentId.push(f.parentId);
+			}
+			else if (lastFeature.parentId == f.parentId) {
+				// same level
+				// increment current level
+				incrementCurrentLevel();
 			}
 			else {
-				node = findNode(root, f.parentId);
-				if (node) {
+				// higher level
+				var cnt = 0;
+				while (!stackParentId.isEmpty()  &&  stackParentId.top() != f.parentId) {
+					stackParentId.pop();
 
-					node.addSubNode(f);
+					console.log(f.parentId, stackParentId.top(), cnt);
+
+					cnt++;
 				}
-			}			
-//			delete f.id;
-//			delete f.parentId;
-		});
+				console.log(f.ftname);
+				console.log(cnt);
+				while (cnt > 0) {
+					level.pop();
+					cnt--;
+				}
+				incrementCurrentLevel();
+			}
+			f.level = level.asList().join('.');
+//			console.log(level.asList());
+
+			lastFeature = f;
+
+			root.addSubNode(f);
+		};
 
 		return root;
 	}
