@@ -1,356 +1,1304 @@
---------- startProduct:1
-endProduct
-{
-  "id": 0,
-  "parentId": 0,
-  "ftid": "ROOT",
-  "ftname": "ROOT",
-  "subnode": [
-    {
-      "ftid": "BAH005",
-      "ftname": "Bemessungsspannung",
-      "fvalues": [
-        "800"
-      ],
-      "funit": "VLT"
-    },
-    {
-      "ftid": "AAP403",
-      "ftname": "Anzahl der Klemmstellen je Etage",
-      "fvalues": [
-        "2"
-      ]
-    },
-    {
-      "ftid": "AAP530",
-      "ftname": "Anzahl der Etagen",
-      "fvalues": [
-        "1"
-      ]
-    },
-    {
-      "ftid": "BAC137",
-      "ftname": "Breite des Rastermaßes",
-      "fvalues": [
-        "5.1"
-      ],
-      "funit": "MMT"
-    },
-    {
-      "ftid": "BAC476",
-      "ftname": "Höhe (bei niedrigbauender Montageart)",
-      "fvalues": [
-        "47"
-      ],
-      "funit": "MMT"
-    },
-    {
-      "ftid": "BAD123",
-      "ftname": "Etagen intern gebrückt",
-      "valueIdRef": "CAA017",
-      "fvalueDetails": "Nein"
-    },
-    {
-      "ftid": "BAD774",
-      "ftname": "Abschlussplatte erforderlich",
-      "valueIdRef": "CAA016",
-      "fvalueDetails": "Ja"
-    },
-    {
-      "ftid": "AAR080",
-      "ftname": "Mechanische und elektrische Konstruktion (s)",
-      "valueIdRef": "ADS444",
-      "fvalueDetails": "Mechanische und elektrische Konstruktion (s)"
-    },
-    {
-      "ftid": "AAB500",
-      "ftname": "Bemessungsstrom",
-      "fvalues": [
-        "32"
-      ],
-      "funit": "AMP"
-    },
-    {
-      "ftid": "BAC677",
-      "ftname": "max. anschließbarer Leiterquerschnitt (eindrähtig)",
-      "fvalues": [
-        "4"
-      ],
-      "funit": "MMK"
-    },
-    {
-      "ftid": "AAB787",
-      "ftname": "max. anschließbarer Leiterquerschnitt (feindrähtig mit Aderendhülse)",
-      "fvalues": [
-        "2.5"
-      ],
-      "funit": "MMK"
-    },
-    {
-      "ftid": "BAC676",
-      "ftname": "max. anschließbarer Leiterquerschnitt (feindrähtig ohne Aderendhülse)",
-      "fvalues": [
-        "4"
-      ],
-      "funit": "MMK"
-    },
-    {
-      "ftid": "AAB789",
-      "ftname": "max. anschließbarer Leiterquerschnitt (mehrdrähtig)",
-      "fvalues": [
-        "4"
-      ],
-      "funit": "MMK"
-    },
-    {
-      "ftid": "BAC740",
-      "ftname": "min. anschließbarer Leiterquerschnitt (eindrähtig)",
-      "fvalues": [
-        "0.14"
-      ],
-      "funit": "MMK"
-    },
-    {
-      "ftid": "AAB937",
-      "ftname": "min. anschließbarer Leiterquerschnitt (feindrähtig mit Aderendhülse)",
-      "fvalues": [
-        "0.14"
-      ],
-      "funit": "MMK"
-    },
-    {
-      "ftid": "BAC739",
-      "ftname": "min. anschließbarer Leiterquerschnitt (feindrähtig ohne Aderendhülse)",
-      "fvalues": [
-        "0.14"
-      ],
-      "funit": "MMK"
-    },
-    {
-      "ftid": "AAB940",
-      "ftname": "min. anschließbarer Leiterquerschnitt (mehrdrähtig)",
-      "fvalues": [
-        "0.14"
-      ],
-      "funit": "MMK"
-    },
-    {
-      "ftid": "BAA018",
-      "ftname": "Länge",
-      "fvalues": [
-        "60"
-      ],
-      "funit": "MMT"
-    },
-    {
-      "ftid": "BAA351",
-      "ftname": "Farbe",
-      "valueIdRef": "BAA242",
-      "fvalueDetails": "beige"
-    },
-    {
-      "ftid": "BAC034",
-      "ftname": "Ausführung des elektrischen Anschlusses (1)",
-      "valueIdRef": "WAA065",
-      "fvalueDetails": "Schraubanschluss"
-    },
-    {
-      "ftid": "BAC140",
-      "ftname": "Brennbarkeitsklasse des Isolierstoffes (in Anlehnung an UL 94)",
-      "valueIdRef": "BAB110",
-      "fvalueDetails": "V0"
-    },
-    {
-      "ftid": "BAC375",
-      "ftname": "Ausführung des elektrischen Anschlusses (2)",
-      "valueIdRef": "WAA065",
-      "fvalueDetails": "Schraubanschluss"
-    },
-    {
-      "ftid": "BAC487",
-      "ftname": "Werkstoff des Isolierkörpers",
-      "fvalues": [
-        "Wemid"
-      ]
-    },
-    {
-      "ftid": "BAG640",
-      "ftname": "Montageart",
-      "valueIdRef": "AAR686",
-      "fvalueDetails": "Sammelschienenbefestigung"
-    },
-    {
-      "ftid": "AAQ373",
-      "ftname": "Hersteller",
-      "valueIdRef": "ADN198",
-      "fvalueDetails": "Hersteller"
-    },
-    {
-      "ftid": "AAS252",
-      "ftname": "Funktionsgruppe",
-      "valueIdRef": "ADN297",
-      "fvalueDetails": "Funktionsgruppe"
-    },
-    {
-      "ftid": "AAN546",
-      "ftname": "Anzahl der Anschlüsse",
-      "fvalues": [
-        "5"
-      ]
-    },
-    {
-      "ftid": "AAQ672",
-      "ftname": "Anschluss",
-      "valueIdRef": "ADN255",
-      "fvalueDetails": "Anschluss"
-    },
-    {
-      "ftid": "AAQ672",
-      "ftname": "Anschluss",
-      "valueIdRef": "ADN255",
-      "fvalueDetails": "Anschluss"
-    },
-    {
-      "ftid": "AAQ672",
-      "ftname": "Anschluss",
-      "valueIdRef": "ADN255",
-      "fvalueDetails": "Anschluss"
-    },
-    {
-      "ftid": "AAQ672",
-      "ftname": "Anschluss",
-      "valueIdRef": "ADN255",
-      "fvalueDetails": "Anschluss"
-    },
-    {
-      "ftid": "AAQ672",
-      "ftname": "Anschluss",
-      "valueIdRef": "ADN255",
-      "fvalueDetails": "Anschluss"
-    },
-    {
-      "ftid": "AAQ326",
-      "ftname": "zusätzlicher Online-Verweis",
-      "fvalues": [
-        "Hyperlink"
-      ]
-    },
-    {
-      "ftid": "AAO261",
-      "ftname": "Anzahl Zolltarifnummer",
-      "fvalues": [
-        "0"
-      ]
-    },
-    {
-      "ftid": "AAN469",
-      "ftname": "Anzahl der Dokumente",
-      "fvalues": [
-        "3"
-      ]
-    },
-    {
-      "ftid": "AAQ680",
-      "ftname": "Zusatzdokumentation",
-      "valueIdRef": "ADN356",
-      "fvalueDetails": "Zusatzdokumentation"
-    },
-    {
-      "ftid": "AAQ680",
-      "ftname": "Zusatzdokumentation",
-      "valueIdRef": "ADN356",
-      "fvalueDetails": "Zusatzdokumentation"
-    },
-    {
-      "ftid": "AAQ680",
-      "ftname": "Zusatzdokumentation",
-      "valueIdRef": "ADN356",
-      "fvalueDetails": "Zusatzdokumentation"
-    },
-    {
-      "ftid": "AAN475",
-      "ftname": "Anzahl der Teilebeziehungen",
-      "fvalues": [
-        "1"
-      ]
-    },
-    {
-      "ftid": "AAQ675",
-      "ftname": "Teilebeziehung",
-      "valueIdRef": "ADN298",
-      "fvalueDetails": "Teilebeziehung"
-    },
-    {
-      "ftid": "AAN544",
-      "ftname": "Anzahl der Befestigungsvarianten",
-      "fvalues": [
-        "1"
-      ]
-    },
-    {
-      "ftid": "AAQ669",
-      "ftname": "Befestigungsvariante",
-      "valueIdRef": "ADN220",
-      "fvalueDetails": "Befestigungsvariante"
-    },
-    {
-      "ftid": "AAN555",
-      "ftname": "Anzahl der Komponentenaufnahmen",
-      "fvalues": [
-        "4"
-      ]
-    },
-    {
-      "ftid": "AAQ661",
-      "ftname": "Komponentenaufnahme",
-      "valueIdRef": "ADN222",
-      "fvalueDetails": "Komponentenaufnahme"
-    },
-    {
-      "ftid": "AAQ661",
-      "ftname": "Komponentenaufnahme",
-      "valueIdRef": "ADN222",
-      "fvalueDetails": "Komponentenaufnahme"
-    },
-    {
-      "ftid": "AAQ661",
-      "ftname": "Komponentenaufnahme",
-      "valueIdRef": "ADN222",
-      "fvalueDetails": "Komponentenaufnahme"
-    },
-    {
-      "ftid": "AAQ661",
-      "ftname": "Komponentenaufnahme",
-      "valueIdRef": "ADN222",
-      "fvalueDetails": "Komponentenaufnahme"
-    },
-    {
-      "ftid": "AAN490",
-      "ftname": "Anzahl der Einbaulagen",
-      "fvalues": [
-        "1"
-      ]
-    },
-    {
-      "ftid": "AAQ668",
-      "ftname": "Einbaulage",
-      "valueIdRef": "ADN459",
-      "fvalueDetails": "Einbaulage"
-    },
-    {
-      "ftid": "AAM653",
-      "ftname": "Anzahl der Sperrflächen",
-      "fvalues": [
-        "0"
-      ]
-    },
-    {
-      "ftid": "AAC314",
-      "ftname": "Produktbezogener Kennbuchstabe (IEC 81346)",
-      "fvalues": [
-        "X"
-      ]
-    }
-  ]
-}
-finish:1
+9 Oct 18:40:20 - [33m[nodemon] v0.7.10[0m
+9 Oct 18:40:20 - [33m[nodemon] to restart at any time, enter `rs`[0m
+9 Oct 18:40:20 - [32m[nodemon] watching: /Users/rene/work/eClass[0m
+9 Oct 18:40:20 - [32m[nodemon] starting `node app.js`[0m
+eClass started
+Express server listening on port 3000
+file:/Users/rene/work/eClass/data/data.xml
+[
+  {
+    "id": 0,
+    "parentId": 0,
+    "ftid": "ROOT",
+    "ftname": "ROOT",
+    "subnode": [
+      {
+        "id": "312",
+        "parentId": "-1",
+        "ftid": "BAH005",
+        "ftname": "Bemessungsspannung",
+        "fvalues": [
+          "800"
+        ],
+        "funit": "VLT"
+      },
+      {
+        "id": "318",
+        "parentId": "-1",
+        "ftid": "AAP403",
+        "ftname": "Anzahl der Klemmstellen je Etage",
+        "fvalues": [
+          "2"
+        ]
+      },
+      {
+        "id": "319",
+        "parentId": "-1",
+        "ftid": "AAP530",
+        "ftname": "Anzahl der Etagen",
+        "fvalues": [
+          "1"
+        ]
+      },
+      {
+        "id": "323",
+        "parentId": "-1",
+        "ftid": "BAC137",
+        "ftname": "Breite des Rastermaßes",
+        "fvalues": [
+          "5.1"
+        ],
+        "funit": "MMT"
+      },
+      {
+        "id": "324",
+        "parentId": "-1",
+        "ftid": "BAC476",
+        "ftname": "Höhe (bei niedrigbauender Montageart)",
+        "fvalues": [
+          "47"
+        ],
+        "funit": "MMT"
+      },
+      {
+        "id": "325",
+        "parentId": "-1",
+        "ftid": "BAD123",
+        "ftname": "Etagen intern gebrückt",
+        "valueIdRef": "CAA017",
+        "fvalueDetails": "Nein"
+      },
+      {
+        "id": "326",
+        "parentId": "-1",
+        "ftid": "BAD774",
+        "ftname": "Abschlussplatte erforderlich",
+        "valueIdRef": "CAA016",
+        "fvalueDetails": "Ja"
+      },
+      {
+        "id": "328",
+        "parentId": "-1",
+        "ftid": "AAR080",
+        "ftname": "Mechanische und elektrische Konstruktion (s)",
+        "valueIdRef": "ADS444",
+        "fvalueDetails": "Mechanische und elektrische Konstruktion (s)",
+        "subnode": [
+          {
+            "id": "329",
+            "parentId": "328",
+            "ftid": "AAQ640",
+            "ftname": "Konstruktion allgemein",
+            "valueIdRef": "ADN455",
+            "fvalueDetails": "Konstruktion allgemein"
+          }
+        ]
+      },
+      {
+        "id": "341",
+        "parentId": "-1",
+        "ftid": "AAB500",
+        "ftname": "Bemessungsstrom",
+        "fvalues": [
+          "32"
+        ],
+        "funit": "AMP"
+      },
+      {
+        "id": "343",
+        "parentId": "-1",
+        "ftid": "BAC677",
+        "ftname": "max. anschließbarer Leiterquerschnitt (eindrähtig)",
+        "fvalues": [
+          "4"
+        ],
+        "funit": "MMK"
+      },
+      {
+        "id": "344",
+        "parentId": "-1",
+        "ftid": "AAB787",
+        "ftname": "max. anschließbarer Leiterquerschnitt (feindrähtig mit Aderendhülse)",
+        "fvalues": [
+          "2.5"
+        ],
+        "funit": "MMK"
+      },
+      {
+        "id": "345",
+        "parentId": "-1",
+        "ftid": "BAC676",
+        "ftname": "max. anschließbarer Leiterquerschnitt (feindrähtig ohne Aderendhülse)",
+        "fvalues": [
+          "4"
+        ],
+        "funit": "MMK"
+      },
+      {
+        "id": "346",
+        "parentId": "-1",
+        "ftid": "AAB789",
+        "ftname": "max. anschließbarer Leiterquerschnitt (mehrdrähtig)",
+        "fvalues": [
+          "4"
+        ],
+        "funit": "MMK"
+      },
+      {
+        "id": "347",
+        "parentId": "-1",
+        "ftid": "BAC740",
+        "ftname": "min. anschließbarer Leiterquerschnitt (eindrähtig)",
+        "fvalues": [
+          "0.14"
+        ],
+        "funit": "MMK"
+      },
+      {
+        "id": "348",
+        "parentId": "-1",
+        "ftid": "AAB937",
+        "ftname": "min. anschließbarer Leiterquerschnitt (feindrähtig mit Aderendhülse)",
+        "fvalues": [
+          "0.14"
+        ],
+        "funit": "MMK"
+      },
+      {
+        "id": "349",
+        "parentId": "-1",
+        "ftid": "BAC739",
+        "ftname": "min. anschließbarer Leiterquerschnitt (feindrähtig ohne Aderendhülse)",
+        "fvalues": [
+          "0.14"
+        ],
+        "funit": "MMK"
+      },
+      {
+        "id": "350",
+        "parentId": "-1",
+        "ftid": "AAB940",
+        "ftname": "min. anschließbarer Leiterquerschnitt (mehrdrähtig)",
+        "fvalues": [
+          "0.14"
+        ],
+        "funit": "MMK"
+      },
+      {
+        "id": "351",
+        "parentId": "-1",
+        "ftid": "BAA018",
+        "ftname": "Länge",
+        "fvalues": [
+          "60"
+        ],
+        "funit": "MMT"
+      },
+      {
+        "id": "358",
+        "parentId": "-1",
+        "ftid": "BAA351",
+        "ftname": "Farbe",
+        "valueIdRef": "BAA242",
+        "fvalueDetails": "beige"
+      },
+      {
+        "id": "359",
+        "parentId": "-1",
+        "ftid": "BAC034",
+        "ftname": "Ausführung des elektrischen Anschlusses (1)",
+        "valueIdRef": "WAA065",
+        "fvalueDetails": "Schraubanschluss"
+      },
+      {
+        "id": "360",
+        "parentId": "-1",
+        "ftid": "BAC140",
+        "ftname": "Brennbarkeitsklasse des Isolierstoffes (in Anlehnung an UL 94)",
+        "valueIdRef": "BAB110",
+        "fvalueDetails": "V0"
+      },
+      {
+        "id": "361",
+        "parentId": "-1",
+        "ftid": "BAC375",
+        "ftname": "Ausführung des elektrischen Anschlusses (2)",
+        "valueIdRef": "WAA065",
+        "fvalueDetails": "Schraubanschluss"
+      },
+      {
+        "id": "362",
+        "parentId": "-1",
+        "ftid": "BAC487",
+        "ftname": "Werkstoff des Isolierkörpers",
+        "fvalues": [
+          "Wemid"
+        ]
+      },
+      {
+        "id": "364",
+        "parentId": "-1",
+        "ftid": "BAG640",
+        "ftname": "Montageart",
+        "valueIdRef": "AAR686",
+        "fvalueDetails": "Sammelschienenbefestigung"
+      },
+      {
+        "id": "15",
+        "parentId": "-1",
+        "ftid": "AAQ373",
+        "ftname": "Hersteller",
+        "valueIdRef": "ADN198",
+        "fvalueDetails": "Hersteller",
+        "subnode": [
+          {
+            "id": "16",
+            "parentId": "15",
+            "ftid": "AAO677",
+            "ftname": "Hersteller-Name",
+            "fvalues": [
+              " Co KG"
+            ]
+          },
+          {
+            "id": "17",
+            "parentId": "15",
+            "ftid": "AAO676",
+            "ftname": "Herstellerartikelnummer",
+            "fvalues": [
+              "1020000000"
+            ]
+          },
+          {
+            "id": "19",
+            "parentId": "15",
+            "ftid": "AAO681",
+            "ftname": "Herstellerprodukttyp",
+            "fvalues": [
+              "WDU"
+            ]
+          },
+          {
+            "id": "21",
+            "parentId": "15",
+            "ftid": "AAM552",
+            "ftname": "Herstellerartikelbezeichnung",
+            "fvalues": [
+              "eng@WDU 2.5",
+              "deu@WDU 2.5"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "40",
+        "parentId": "-1",
+        "ftid": "AAS252",
+        "ftname": "Funktionsgruppe",
+        "valueIdRef": "ADN297",
+        "fvalueDetails": "Funktionsgruppe",
+        "subnode": [
+          {
+            "id": "43",
+            "parentId": "40",
+            "ftid": "AAN542",
+            "ftname": "Anzahl der Funktionen",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "44",
+            "parentId": "40",
+            "ftid": "AAQ676",
+            "ftname": "Funktion",
+            "valueIdRef": "ADN296",
+            "fvalueDetails": "Funktion"
+          },
+          {
+            "id": "68",
+            "parentId": "40",
+            "ftid": "AAN475",
+            "ftname": "Anzahl der Teilebeziehungen",
+            "fvalues": [
+              "0"
+            ]
+          },
+          {
+            "id": "77",
+            "parentId": "40",
+            "ftid": "AAN545",
+            "ftname": "Anzahl der Funktionsgruppen",
+            "fvalues": [
+              "0"
+            ]
+          },
+          {
+            "id": "118",
+            "parentId": "40",
+            "ftid": "AAS243",
+            "ftname": "Typ der Funktionsgruppen",
+            "valueIdRef": "AAV506",
+            "fvalueDetails": "Feste Funktionsgruppen"
+          }
+        ]
+      },
+      {
+        "id": "119",
+        "parentId": "-1",
+        "ftid": "AAN546",
+        "ftname": "Anzahl der Anschlüsse",
+        "fvalues": [
+          "5"
+        ]
+      },
+      {
+        "id": "120",
+        "parentId": "-1",
+        "ftid": "AAQ672",
+        "ftname": "Anschluss",
+        "valueIdRef": "ADN255",
+        "fvalueDetails": "Anschluss",
+        "subnode": [
+          {
+            "id": "121",
+            "parentId": "120",
+            "ftid": "AAN386",
+            "ftname": "Typ des Anschlusses",
+            "valueIdRef": "AAR652",
+            "fvalueDetails": "Einzelanschluss elektrisch"
+          },
+          {
+            "id": "758",
+            "parentId": "120",
+            "ftid": "AAN337",
+            "ftname": "Anschlussidentifikator",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "759",
+            "parentId": "120",
+            "ftid": "AAM650",
+            "ftname": "Position",
+            "fvalues": [
+              "2.55",
+              "54.98",
+              "25.8",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "id": "760",
+            "parentId": "120",
+            "ftid": "AAN496",
+            "ftname": "Verbindungsrichtung",
+            "valueIdRef": "BAD046",
+            "fvalueDetails": "von oben"
+          },
+          {
+            "id": "762",
+            "parentId": "120",
+            "ftid": "AAN497",
+            "ftname": "Anschluss abziehbar",
+            "valueIdRef": "CAA017",
+            "fvalueDetails": "Nein"
+          },
+          {
+            "id": "764",
+            "parentId": "120",
+            "ftid": "AAN475",
+            "ftname": "Anzahl der Teilebeziehungen",
+            "fvalues": [
+              "0"
+            ]
+          },
+          {
+            "id": "774",
+            "parentId": "120",
+            "ftid": "AAQ534",
+            "ftname": "Verdrahtung",
+            "valueIdRef": "ADN317",
+            "fvalueDetails": "Verdrahtung"
+          },
+          {
+            "id": "829",
+            "parentId": "120",
+            "ftid": "AAN488",
+            "ftname": "Anzahl der Bemessungswerte",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "830",
+            "parentId": "120",
+            "ftid": "AAQ527",
+            "ftname": "Bemessungswert für Anschluss",
+            "valueIdRef": "ADN320",
+            "fvalueDetails": "Bemessungswert für Anschluss"
+          }
+        ]
+      },
+      {
+        "id": "686",
+        "parentId": "-1",
+        "ftid": "AAQ672",
+        "ftname": "Anschluss",
+        "valueIdRef": "ADN255",
+        "fvalueDetails": "Anschluss",
+        "subnode": [
+          {
+            "id": "687",
+            "parentId": "686",
+            "ftid": "AAN386",
+            "ftname": "Typ des Anschlusses",
+            "valueIdRef": "AAR652",
+            "fvalueDetails": "Einzelanschluss elektrisch"
+          },
+          {
+            "id": "835",
+            "parentId": "686",
+            "ftid": "AAN337",
+            "ftname": "Anschlussidentifikator",
+            "fvalues": [
+              "2"
+            ]
+          },
+          {
+            "id": "836",
+            "parentId": "686",
+            "ftid": "AAM650",
+            "ftname": "Position",
+            "fvalues": [
+              "2.55",
+              "9.47",
+              "25.8",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "id": "837",
+            "parentId": "686",
+            "ftid": "AAN496",
+            "ftname": "Verbindungsrichtung",
+            "valueIdRef": "AAR834",
+            "fvalueDetails": "von unten"
+          },
+          {
+            "id": "839",
+            "parentId": "686",
+            "ftid": "AAN497",
+            "ftname": "Anschluss abziehbar",
+            "valueIdRef": "CAA017",
+            "fvalueDetails": "Nein"
+          },
+          {
+            "id": "841",
+            "parentId": "686",
+            "ftid": "AAN475",
+            "ftname": "Anzahl der Teilebeziehungen",
+            "fvalues": [
+              "0"
+            ]
+          },
+          {
+            "id": "851",
+            "parentId": "686",
+            "ftid": "AAQ534",
+            "ftname": "Verdrahtung",
+            "valueIdRef": "ADN317",
+            "fvalueDetails": "Verdrahtung"
+          },
+          {
+            "id": "906",
+            "parentId": "686",
+            "ftid": "AAN488",
+            "ftname": "Anzahl der Bemessungswerte",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "907",
+            "parentId": "686",
+            "ftid": "AAQ527",
+            "ftname": "Bemessungswert für Anschluss",
+            "valueIdRef": "ADN320",
+            "fvalueDetails": "Bemessungswert für Anschluss"
+          }
+        ]
+      },
+      {
+        "id": "704",
+        "parentId": "-1",
+        "ftid": "AAQ672",
+        "ftname": "Anschluss",
+        "valueIdRef": "ADN255",
+        "fvalueDetails": "Anschluss",
+        "subnode": [
+          {
+            "id": "705",
+            "parentId": "704",
+            "ftid": "AAN386",
+            "ftname": "Typ des Anschlusses",
+            "valueIdRef": "AAR652",
+            "fvalueDetails": "Einzelanschluss elektrisch"
+          },
+          {
+            "id": "912",
+            "parentId": "704",
+            "ftid": "AAN337",
+            "ftname": "Anschlussidentifikator",
+            "fvalues": [
+              "3"
+            ]
+          },
+          {
+            "id": "913",
+            "parentId": "704",
+            "ftid": "AAM650",
+            "ftname": "Position",
+            "fvalues": [
+              "2.55",
+              "35.1",
+              "38.8",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "id": "914",
+            "parentId": "704",
+            "ftid": "AAN496",
+            "ftname": "Verbindungsrichtung",
+            "valueIdRef": "AAR837",
+            "fvalueDetails": "von vorne"
+          },
+          {
+            "id": "916",
+            "parentId": "704",
+            "ftid": "AAN497",
+            "ftname": "Anschluss abziehbar",
+            "valueIdRef": "CAA017",
+            "fvalueDetails": "Nein"
+          },
+          {
+            "id": "918",
+            "parentId": "704",
+            "ftid": "AAN475",
+            "ftname": "Anzahl der Teilebeziehungen",
+            "fvalues": [
+              "0"
+            ]
+          },
+          {
+            "id": "928",
+            "parentId": "704",
+            "ftid": "AAQ534",
+            "ftname": "Verdrahtung",
+            "valueIdRef": "ADN317",
+            "fvalueDetails": "Verdrahtung"
+          },
+          {
+            "id": "983",
+            "parentId": "704",
+            "ftid": "AAN488",
+            "ftname": "Anzahl der Bemessungswerte",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "984",
+            "parentId": "704",
+            "ftid": "AAQ527",
+            "ftname": "Bemessungswert für Anschluss",
+            "valueIdRef": "ADN320",
+            "fvalueDetails": "Bemessungswert für Anschluss"
+          }
+        ]
+      },
+      {
+        "id": "722",
+        "parentId": "-1",
+        "ftid": "AAQ672",
+        "ftname": "Anschluss",
+        "valueIdRef": "ADN255",
+        "fvalueDetails": "Anschluss",
+        "subnode": [
+          {
+            "id": "723",
+            "parentId": "722",
+            "ftid": "AAN386",
+            "ftname": "Typ des Anschlusses",
+            "valueIdRef": "AAR652",
+            "fvalueDetails": "Einzelanschluss elektrisch"
+          },
+          {
+            "id": "989",
+            "parentId": "722",
+            "ftid": "AAN337",
+            "ftname": "Anschlussidentifikator",
+            "fvalues": [
+              "4"
+            ]
+          },
+          {
+            "id": "990",
+            "parentId": "722",
+            "ftid": "AAM650",
+            "ftname": "Position",
+            "fvalues": [
+              "2.55",
+              "32",
+              "38.8",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "id": "991",
+            "parentId": "722",
+            "ftid": "AAN496",
+            "ftname": "Verbindungsrichtung",
+            "valueIdRef": "AAR837",
+            "fvalueDetails": "von vorne"
+          },
+          {
+            "id": "993",
+            "parentId": "722",
+            "ftid": "AAN497",
+            "ftname": "Anschluss abziehbar",
+            "valueIdRef": "CAA017",
+            "fvalueDetails": "Nein"
+          },
+          {
+            "id": "995",
+            "parentId": "722",
+            "ftid": "AAN475",
+            "ftname": "Anzahl der Teilebeziehungen",
+            "fvalues": [
+              "0"
+            ]
+          },
+          {
+            "id": "1005",
+            "parentId": "722",
+            "ftid": "AAQ534",
+            "ftname": "Verdrahtung",
+            "valueIdRef": "ADN317",
+            "fvalueDetails": "Verdrahtung"
+          },
+          {
+            "id": "1060",
+            "parentId": "722",
+            "ftid": "AAN488",
+            "ftname": "Anzahl der Bemessungswerte",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "1061",
+            "parentId": "722",
+            "ftid": "AAQ527",
+            "ftname": "Bemessungswert für Anschluss",
+            "valueIdRef": "ADN320",
+            "fvalueDetails": "Bemessungswert für Anschluss"
+          }
+        ]
+      },
+      {
+        "id": "740",
+        "parentId": "-1",
+        "ftid": "AAQ672",
+        "ftname": "Anschluss",
+        "valueIdRef": "ADN255",
+        "fvalueDetails": "Anschluss",
+        "subnode": [
+          {
+            "id": "741",
+            "parentId": "740",
+            "ftid": "AAN386",
+            "ftname": "Typ des Anschlusses",
+            "valueIdRef": "AAR652",
+            "fvalueDetails": "Einzelanschluss elektrisch"
+          },
+          {
+            "id": "1066",
+            "parentId": "740",
+            "ftid": "AAN337",
+            "ftname": "Anschlussidentifikator",
+            "fvalues": [
+              "5"
+            ]
+          },
+          {
+            "id": "1067",
+            "parentId": "740",
+            "ftid": "AAM650",
+            "ftname": "Position",
+            "fvalues": [
+              "2.55",
+              "28.9",
+              "38.8",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "id": "1068",
+            "parentId": "740",
+            "ftid": "AAN496",
+            "ftname": "Verbindungsrichtung",
+            "valueIdRef": "AAR837",
+            "fvalueDetails": "von vorne"
+          },
+          {
+            "id": "1070",
+            "parentId": "740",
+            "ftid": "AAN497",
+            "ftname": "Anschluss abziehbar",
+            "valueIdRef": "CAA017",
+            "fvalueDetails": "Nein"
+          },
+          {
+            "id": "1072",
+            "parentId": "740",
+            "ftid": "AAN475",
+            "ftname": "Anzahl der Teilebeziehungen",
+            "fvalues": [
+              "0"
+            ]
+          },
+          {
+            "id": "1082",
+            "parentId": "740",
+            "ftid": "AAQ534",
+            "ftname": "Verdrahtung",
+            "valueIdRef": "ADN317",
+            "fvalueDetails": "Verdrahtung"
+          },
+          {
+            "id": "1137",
+            "parentId": "740",
+            "ftid": "AAN488",
+            "ftname": "Anzahl der Bemessungswerte",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "1138",
+            "parentId": "740",
+            "ftid": "AAQ527",
+            "ftname": "Bemessungswert für Anschluss",
+            "valueIdRef": "ADN320",
+            "fvalueDetails": "Bemessungswert für Anschluss"
+          }
+        ]
+      },
+      {
+        "id": "180",
+        "parentId": "-1",
+        "ftid": "AAQ326",
+        "ftname": "zusätzlicher Online-Verweis",
+        "fvalues": [
+          "Hyperlink"
+        ]
+      },
+      {
+        "id": "182",
+        "parentId": "-1",
+        "ftid": "AAO261",
+        "ftname": "Anzahl Zolltarifnummer",
+        "fvalues": [
+          "0"
+        ]
+      },
+      {
+        "id": "188",
+        "parentId": "-1",
+        "ftid": "AAN469",
+        "ftname": "Anzahl der Dokumente",
+        "fvalues": [
+          "3"
+        ]
+      },
+      {
+        "id": "189",
+        "parentId": "-1",
+        "ftid": "AAQ680",
+        "ftname": "Zusatzdokumentation",
+        "valueIdRef": "ADN356",
+        "fvalueDetails": "Zusatzdokumentation",
+        "subnode": [
+          {
+            "id": "190",
+            "parentId": "189",
+            "ftid": "AAP003",
+            "ftname": "Version",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "191",
+            "parentId": "189",
+            "ftid": "AAN467",
+            "ftname": "Länder-/Regionszuordnung des Dokumentes",
+            "valueIdRef": "AAS200",
+            "fvalueDetails": "Deutschland"
+          },
+          {
+            "id": "192",
+            "parentId": "189",
+            "ftid": "AAM660",
+            "ftname": "Typ des Dokumentes",
+            "valueIdRef": "AAR858",
+            "fvalueDetails": "technische Dokumentation"
+          },
+          {
+            "id": "195",
+            "parentId": "189",
+            "ftid": "AAN466",
+            "ftname": "Beschreibung",
+            "fvalues": [
+              "eng@Data sheet",
+              "deu@Datenblatt"
+            ]
+          },
+          {
+            "id": "196",
+            "parentId": "189",
+            "ftid": "AAC311",
+            "ftname": "Quelle als Pfadangabe",
+            "fvalues": [
+              "1020000000_WDU_2.5_de.pdf"
+            ]
+          },
+          {
+            "id": "197",
+            "parentId": "189",
+            "ftid": "AAN468",
+            "ftname": "Sprache des Dokumentes",
+            "valueIdRef": "AAS055",
+            "fvalueDetails": "Deutsch"
+          },
+          {
+            "id": "200",
+            "parentId": "189",
+            "ftid": "AAM663",
+            "ftname": "Quelldateityp",
+            "fvalues": [
+              "application/pdf"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1143",
+        "parentId": "-1",
+        "ftid": "AAQ680",
+        "ftname": "Zusatzdokumentation",
+        "valueIdRef": "ADN356",
+        "fvalueDetails": "Zusatzdokumentation",
+        "subnode": [
+          {
+            "id": "1146",
+            "parentId": "1143",
+            "ftid": "AAM660",
+            "ftname": "Typ des Dokumentes",
+            "valueIdRef": "AAR860",
+            "fvalueDetails": "Artikeldarstellung"
+          },
+          {
+            "id": "1149",
+            "parentId": "1143",
+            "ftid": "AAN466",
+            "ftname": "Beschreibung",
+            "fvalues": [
+              "eng@Productpicture",
+              "deu@Produktfoto"
+            ]
+          },
+          {
+            "id": "1150",
+            "parentId": "1143",
+            "ftid": "AAC311",
+            "ftname": "Quelle als Pfadangabe",
+            "fvalues": [
+              "10200000009999.jpg"
+            ]
+          },
+          {
+            "id": "1154",
+            "parentId": "1143",
+            "ftid": "AAM663",
+            "ftname": "Quelldateityp",
+            "fvalues": [
+              "image/jpg"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "1155",
+        "parentId": "-1",
+        "ftid": "AAQ680",
+        "ftname": "Zusatzdokumentation",
+        "valueIdRef": "ADN356",
+        "fvalueDetails": "Zusatzdokumentation",
+        "subnode": [
+          {
+            "id": "1158",
+            "parentId": "1155",
+            "ftid": "AAM660",
+            "ftname": "Typ des Dokumentes",
+            "valueIdRef": "AAR860",
+            "fvalueDetails": "Artikeldarstellung"
+          },
+          {
+            "id": "1161",
+            "parentId": "1155",
+            "ftid": "AAN466",
+            "ftname": "Beschreibung",
+            "fvalues": [
+              "deu@3D step Modell"
+            ]
+          },
+          {
+            "id": "1162",
+            "parentId": "1155",
+            "ftid": "AAC311",
+            "ftname": "Quelle als Pfadangabe",
+            "fvalues": [
+              "1020000000_09252_WDU_2.5_STP.stp"
+            ]
+          },
+          {
+            "id": "1166",
+            "parentId": "1155",
+            "ftid": "AAM663",
+            "ftname": "Quelldateityp",
+            "fvalues": [
+              "application/STEP"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "202",
+        "parentId": "-1",
+        "ftid": "AAN475",
+        "ftname": "Anzahl der Teilebeziehungen",
+        "fvalues": [
+          "1"
+        ]
+      },
+      {
+        "id": "203",
+        "parentId": "-1",
+        "ftid": "AAQ675",
+        "ftname": "Teilebeziehung",
+        "valueIdRef": "ADN298",
+        "fvalueDetails": "Teilebeziehung",
+        "subnode": [
+          {
+            "id": "206",
+            "parentId": "203",
+            "ftid": "AAN551",
+            "ftname": "Anzahl der Teilebeziehungsvarianten",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "207",
+            "parentId": "203",
+            "ftid": "AAQ682",
+            "ftname": "Teilebeziehungsvariante",
+            "valueIdRef": "ADN299",
+            "fvalueDetails": "Teilebeziehungsvariante"
+          }
+        ]
+      },
+      {
+        "id": "211",
+        "parentId": "-1",
+        "ftid": "AAN544",
+        "ftname": "Anzahl der Befestigungsvarianten",
+        "fvalues": [
+          "1"
+        ]
+      },
+      {
+        "id": "212",
+        "parentId": "-1",
+        "ftid": "AAQ669",
+        "ftname": "Befestigungsvariante",
+        "valueIdRef": "ADN220",
+        "fvalueDetails": "Befestigungsvariante",
+        "subnode": [
+          {
+            "id": "213",
+            "parentId": "212",
+            "ftid": "AAN505",
+            "ftname": "Befestigungsbezugspunkt",
+            "fvalues": [
+              "0",
+              "32",
+              "6.8",
+              "0",
+              "0",
+              "0"
+            ]
+          },
+          {
+            "id": "214",
+            "parentId": "212",
+            "ftid": "AAM652",
+            "ftname": "Anzahl der Montageausbrüche",
+            "fvalues": [
+              "0"
+            ]
+          },
+          {
+            "id": "220",
+            "parentId": "212",
+            "ftid": "AAN581",
+            "ftname": "Anzahl der Befestigungspunkte",
+            "fvalues": [
+              "0"
+            ]
+          },
+          {
+            "id": "242",
+            "parentId": "212",
+            "ftid": "AAN507",
+            "ftname": "Art der Befestigung",
+            "valueIdRef": "AAM168",
+            "fvalueDetails": "Hutschiene 35 mm"
+          },
+          {
+            "id": "243",
+            "parentId": "212",
+            "ftid": "AAM653",
+            "ftname": "Anzahl der Sperrflächen",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "244",
+            "parentId": "212",
+            "ftid": "AAQ660",
+            "ftname": "Sperraum",
+            "valueIdRef": "ADN223",
+            "fvalueDetails": "Sperraum"
+          },
+          {
+            "id": "248",
+            "parentId": "212",
+            "ftid": "AAN493",
+            "ftname": "Befestigung auf einem anderen Bauteil möglich",
+            "valueIdRef": "CAA017",
+            "fvalueDetails": "Nein"
+          },
+          {
+            "id": "249",
+            "parentId": "212",
+            "ftid": "AAN494",
+            "ftname": "Befestigung unter einem anderen Bauteil möglich",
+            "valueIdRef": "CAA017",
+            "fvalueDetails": "Nein"
+          }
+        ]
+      },
+      {
+        "id": "251",
+        "parentId": "-1",
+        "ftid": "AAN555",
+        "ftname": "Anzahl der Komponentenaufnahmen",
+        "fvalues": [
+          "4"
+        ]
+      },
+      {
+        "id": "252",
+        "parentId": "-1",
+        "ftid": "AAQ661",
+        "ftname": "Komponentenaufnahme",
+        "valueIdRef": "ADN222",
+        "fvalueDetails": "Komponentenaufnahme",
+        "subnode": [
+          {
+            "id": "253",
+            "parentId": "252",
+            "ftid": "AAN470",
+            "ftname": "Anzahl der Komponentenaufnahmevarianten",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "254",
+            "parentId": "252",
+            "ftid": "AAQ662",
+            "ftname": "Komponentenaufnahmevariante",
+            "valueIdRef": "ADN226",
+            "fvalueDetails": "Komponentenaufnahmevariante"
+          }
+        ]
+      },
+      {
+        "id": "1189",
+        "parentId": "-1",
+        "ftid": "AAQ661",
+        "ftname": "Komponentenaufnahme",
+        "valueIdRef": "ADN222",
+        "fvalueDetails": "Komponentenaufnahme",
+        "subnode": [
+          {
+            "id": "1190",
+            "parentId": "1189",
+            "ftid": "AAN470",
+            "ftname": "Anzahl der Komponentenaufnahmevarianten",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "1191",
+            "parentId": "1189",
+            "ftid": "AAQ662",
+            "ftname": "Komponentenaufnahmevariante",
+            "valueIdRef": "ADN226",
+            "fvalueDetails": "Komponentenaufnahmevariante"
+          }
+        ]
+      },
+      {
+        "id": "1234",
+        "parentId": "-1",
+        "ftid": "AAQ661",
+        "ftname": "Komponentenaufnahme",
+        "valueIdRef": "ADN222",
+        "fvalueDetails": "Komponentenaufnahme",
+        "subnode": [
+          {
+            "id": "1235",
+            "parentId": "1234",
+            "ftid": "AAN470",
+            "ftname": "Anzahl der Komponentenaufnahmevarianten",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "1236",
+            "parentId": "1234",
+            "ftid": "AAQ662",
+            "ftname": "Komponentenaufnahmevariante",
+            "valueIdRef": "ADN226",
+            "fvalueDetails": "Komponentenaufnahmevariante"
+          }
+        ]
+      },
+      {
+        "id": "1279",
+        "parentId": "-1",
+        "ftid": "AAQ661",
+        "ftname": "Komponentenaufnahme",
+        "valueIdRef": "ADN222",
+        "fvalueDetails": "Komponentenaufnahme",
+        "subnode": [
+          {
+            "id": "1280",
+            "parentId": "1279",
+            "ftid": "AAN470",
+            "ftname": "Anzahl der Komponentenaufnahmevarianten",
+            "fvalues": [
+              "1"
+            ]
+          },
+          {
+            "id": "1281",
+            "parentId": "1279",
+            "ftid": "AAQ662",
+            "ftname": "Komponentenaufnahmevariante",
+            "valueIdRef": "ADN226",
+            "fvalueDetails": "Komponentenaufnahmevariante"
+          }
+        ]
+      },
+      {
+        "id": "297",
+        "parentId": "-1",
+        "ftid": "AAN490",
+        "ftname": "Anzahl der Einbaulagen",
+        "fvalues": [
+          "1"
+        ]
+      },
+      {
+        "id": "298",
+        "parentId": "-1",
+        "ftid": "AAQ668",
+        "ftname": "Einbaulage",
+        "valueIdRef": "ADN459",
+        "fvalueDetails": "Einbaulage",
+        "subnode": [
+          {
+            "id": "299",
+            "parentId": "298",
+            "ftid": "AAO050",
+            "ftname": "Einbaulage",
+            "fvalues": [
+              "eng@vertical",
+              "deu@vertikal"
+            ]
+          },
+          {
+            "id": "300",
+            "parentId": "298",
+            "ftid": "AAM653",
+            "ftname": "Anzahl der Sperrflächen",
+            "fvalues": [
+              "0"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "306",
+        "parentId": "-1",
+        "ftid": "AAM653",
+        "ftname": "Anzahl der Sperrflächen",
+        "fvalues": [
+          "0"
+        ]
+      },
+      {
+        "id": "311",
+        "parentId": "-1",
+        "ftid": "AAC314",
+        "ftname": "Produktbezogener Kennbuchstabe (IEC 81346)",
+        "fvalues": [
+          "X"
+        ]
+      }
+    ]
+  }
+]
+[90mGET / [31m500 [90m282ms - 1.2kb[0m
+9 Oct 18:40:33 - [nodemon] exiting

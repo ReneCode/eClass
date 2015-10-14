@@ -14,9 +14,11 @@ app.use(express.logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
+/*
 if ('development' == app.get('env')) {
 	app.use(express.errorHandler());
 }
+*/
 
 route(app);
 
