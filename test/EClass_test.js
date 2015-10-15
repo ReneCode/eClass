@@ -13,21 +13,30 @@ describe('EClassMetaData', function() {
 		});
 	});
 
-	describe('#getBlockIdentifer', function() {
-		it('should find block property from cardinality-property', function() {
-			var blockId = EClassMetaData.getBlockIdentifer('AAM631');
-			assert.equal( blockId, 'AAQ378');
+	describe('#getBlockIdentifers', function() {
+		it('should find one block property from cardinality-property', function() {
+			var blockId = EClassMetaData.getBlockIdentifers('AAM631');
+			assert.deepEqual( blockId, ['AAQ378']);
+		});
+
+		it('should find multiple block property from cardinality-property (at the end of the list)', function() {
+			var blockIds = EClassMetaData.getBlockIdentifers('AAT604');
+			assert.deepEqual( blockIds, ['AAT605', 'AAT978','AAU404', 'AAU419']);
 		});
 
 		it('should not find block property from none cardinality-property', function() {
-			var blockId = EClassMetaData.getBlockIdentifer('AAM637');
-			assert.equal( blockId, undefined);
+			var blockId = EClassMetaData.getBlockIdentifers('AAM637');
+			assert.deepEqual( blockId, []);
 		});
 	});
 
 	describe('#isBlockIdentifer', function() {
 		it('should find block property', function() {
 			assert.equal( EClassMetaData.isBlockIdentifer('AAQ381'), true);
+		});
+
+		it('should find block property (at the end of the list)', function() {
+			assert.equal( EClassMetaData.isBlockIdentifer('AAU429'), true);
 		});
 
 		it('should not find none block property', function() {
