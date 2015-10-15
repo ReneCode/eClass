@@ -1226,7 +1226,7 @@ var getBlockIdentifers = function(cardinalFeatuesId) {
 };
 
 
-var isBlockIdentifer = function(featureId) {
+var isBlockFeature = function(featureId) {
 	var pairs = mapBlockCardinal.length / 2;
 	for (var i=0; i<pairs; i++) {
 		if (mapBlockCardinal[2*i] == featureId) {
@@ -1247,5 +1247,5 @@ var isCardinality = function(featureId) {
 
 module.exports.isCardinality = isCardinality;
 module.exports.getBlockIdentifers = getBlockIdentifers;
-module.exports.isBlockIdentifer = isBlockIdentifer;
+module.exports.isBlockFeature = isBlockFeature;
 

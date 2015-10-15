@@ -20,6 +20,13 @@ ul {
 	padding-left: 10px;
 }
 
+li.block {
+	background-color: #ecc;
+}
+li.cardinal {
+	background-color: #e77;
+}
+
 li:hover {
 	background-color: #ddd;
 	cursor: pointer;

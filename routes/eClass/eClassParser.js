@@ -1,7 +1,8 @@
 
 var eClassFeatureParser = require('./eClassFeatureParser.js')
 var eClassFeatureTree = require('./eClassFeatureTree.js')
-var EClassNode = require('./eClassNode.js')
+var EClassFeature = require('./eClassFeature.js')
+var EClassMetaData = require('./EClassMetaData.js');
 
 var eClassParser = function (callback) {
 	var fvalues = [];
@@ -102,7 +103,7 @@ var eClassParser = function (callback) {
 	}
 
 	this.endFeature = function() {
-		var node = new EClassNode(id, parentId, ftid, ftname);
+		var node = new EClassFeature(id, parentId, ftid, ftname);
 		if (fvalues.length > 0) {
 			node.fvalues = fvalues;
 		}
@@ -115,6 +116,13 @@ var eClassParser = function (callback) {
 		if (funit) {
 			node.funit = funit;
 		}
+		if (EClassMetaData.isBlockFeature(ftid)) {
+			node.type = "block";
+		}
+		else if (EClassMetaData.isCardinality(ftid)) {
+			node.type = "cardinal";
+		}
+
 		featureList.push(node);
 	}
 

@@ -1,4 +1,4 @@
-var EClassNode = require('./eClassNode.js')
+var EClassFeature = require('./eClassFeature.js')
 var Stack = require('./Stack.js');
 
 
@@ -13,7 +13,7 @@ var eClassFeatureTree = function() {
 	}
 
 	this.create = function(list) {
-		var root = new EClassNode(-1,0,"ROOT", "ROOT");
+		var root = new EClassFeature(-1,0,"ROOT", "ROOT");
 		var lastFeature = root;
 		var stackParentId = new Stack();
 		level = new Stack();
@@ -21,8 +21,7 @@ var eClassFeatureTree = function() {
 		for (var i=0; i<list.length; i++) {
 			var f = list[i];
 
-
-			console.log(level.asList().join());
+//			console.log(level.asList().join());
 			if (lastFeature.id == f.parentId) {
 				// one level below
 				level.push(1);
@@ -39,12 +38,12 @@ var eClassFeatureTree = function() {
 				while (!stackParentId.isEmpty()  &&  stackParentId.top() != f.parentId) {
 					stackParentId.pop();
 
-					console.log(f.parentId, stackParentId.top(), cnt);
+					// console.log(f.parentId, stackParentId.top(), cnt);
 
 					cnt++;
 				}
-				console.log(f.ftname);
-				console.log(cnt);
+				//console.log(f.ftname);
+				//console.log(cnt);
 				while (cnt > 0) {
 					level.pop();
 					cnt--;

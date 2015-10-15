@@ -5,7 +5,7 @@ var EClassMetaData = require('../routes/eClass/eClassMetaData.js');
 describe('EClassMetaData', function() {
 	describe('#isCardinality', function() {
 		it('should find cardinality-property', function() {
-			assert.equal( EClassMetaData.isCardinality("AAO329"), true );
+			assert.equal( EClassMetaData.isCardinality("AAN542"), true );
 		});
 
 		it('should not find none-cardinality-property', function() {
@@ -30,17 +30,17 @@ describe('EClassMetaData', function() {
 		});
 	});
 
-	describe('#isBlockIdentifer', function() {
+	describe('#isBlockFeature', function() {
 		it('should find block property', function() {
-			assert.equal( EClassMetaData.isBlockIdentifer('AAQ381'), true);
+			assert.equal( EClassMetaData.isBlockFeature('AAQ381'), true);
 		});
 
 		it('should find block property (at the end of the list)', function() {
-			assert.equal( EClassMetaData.isBlockIdentifer('AAU429'), true);
+			assert.equal( EClassMetaData.isBlockFeature('AAU429'), true);
 		});
 
 		it('should not find none block property', function() {
-			assert.equal( EClassMetaData.isBlockIdentifer('AAQ177'), false);
+			assert.equal( EClassMetaData.isBlockFeature('AAQ177'), false);
 		});
 
 	});

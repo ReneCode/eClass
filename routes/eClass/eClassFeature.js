@@ -1,12 +1,12 @@
 
-var EClassNode = function (id, parentId, ftid, ftname) {
+var EClassFeatue = function (id, parentId, ftid, ftname) {
 	this.id = id;
 	this.parentId = parentId;
 	this.ftid = ftid;
 	this.ftname = ftname;
 };
 
-EClassNode.prototype.addSubNode = function(subnode) {
+EClassFeatue.prototype.addSubNode = function(subnode) {
 	if (this.hasOwnProperty('subnode')) {
 		this.subnode.push(subnode);
 	}
@@ -16,4 +16,4 @@ EClassNode.prototype.addSubNode = function(subnode) {
 }
 
 
-module.exports = EClassNode;
+module.exports = EClassFeatue;
