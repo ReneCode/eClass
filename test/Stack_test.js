@@ -86,4 +86,5 @@ describe('Stack', function() {
 
 	});
 
-})
+});
+
