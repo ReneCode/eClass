@@ -2,7 +2,7 @@
 var eClassFeatureParser = require('./eClassFeatureParser.js')
 var eClassFeatureTree = require('./eClassFeatureTree.js')
 var EClassFeature = require('./eClassFeature.js')
-var EClassMetaData = require('./EClassMetaData.js');
+var EClassMetaData = require('./eClassMetaData.js');
 
 var eClassParser = function (callback) {
 	var fvalues = [];
