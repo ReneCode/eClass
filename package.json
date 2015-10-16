@@ -7,13 +7,12 @@
     "test": "mocha",
     "start": "node app.js"
   },
-
   "author": "",
   "license": "ISC",
-
   "dependencies": {
-    "node-expat": "^2.3.10",
+    "clone": "^1.0.2",
     "express": "3.4.8",
-    "jade": "*"
+    "jade": "*",
+    "node-expat": "^2.3.10"
   }
 }

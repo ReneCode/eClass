@@ -1,5 +1,6 @@
 var assert = require('assert');
 var Stack = require('../routes/eClass/Stack.js');
+var clone = require('clone');
 
 describe('Stack', function() {
 	describe('#push', function() {
@@ -83,8 +84,77 @@ describe('Stack', function() {
 			s.push(8);
 			assert.equal('5.6.8', s.asList().join('.'));
 		});
+	});
+
+	describe('#incTop', function() {
+		it('should increment the top value', function() {
+			var s = new Stack();
+			s.push(1);
+			s.push(2);
+			s.incTop();
+			s.push(10);
+			s.incTop();
+			assert.equal('1.3.11', s.asList().join('.'));
+		});
+	});
+
+	describe('copy of Stack', function() {
+		it('should be independent', function() {
+			var s1 = new Stack();
+			s1.push('a');
+			var s2 = clone(s1);
+			s2.push('b');
+			assert.deepEqual(['a'], s1.asList());
+			assert.deepEqual(['a','b'], s2.asList());
+		});
+	});
+
+	describe('#count', function() {
+		it('should return the count of elements', function() {
+			var s = new Stack();
+			s.push('x');
+			s.push('y');
+			s.push('z');
+			assert.equal(3, s.count());
+		});
+	});
+
+	describe('#contains', function() {
+		it('should return true if it contains the given Stack', function() {
+			var s1 = new Stack();
+			s1.push(3);
+			s1.push(5);
+			s1.push(7);
+			var s2 = new Stack();
+			s2.push(3);
+			s2.push(5);
+			assert.equal(true, s1.contains(s2));
+		});
+
+		it('should return false if it does not contains', function() {
+			var s1 = new Stack();
+			s1.push(3);
+			s1.push(4);
+			s1.push(7);
+			var s2 = new Stack();
+			s2.push(3);
+			s2.push(5);
+			assert.equal(false, s1.contains(s2));
+		});
+
+		it('should return false if stack is too small', function() {
+			var s1 = new Stack();
+			s1.push(3);
+			s1.push(5);
+			var s2 = new Stack();
+			s2.push(3);
+			s2.push(5);
+			s2.push(7);
+			assert.equal(false, s1.contains(s2));
+		});
 
 	});
+
 
 });
 
