@@ -6,7 +6,7 @@ block content
 
 	ul
 		each val in subnode
-			li(class="#{val.type}") #{val.ftid} 
+			li(class="#{val.type}") #{val.ftid} #{val.index}
 				span.level #{val.level}
 				span.name #{val.ftname}
 				span.value #{val.fvalues}

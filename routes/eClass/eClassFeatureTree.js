@@ -1,60 +1,85 @@
 var EClassFeature = require('./eClassFeature.js')
 var Stack = require('./Stack.js');
-
+var EClassMetaData = require('./eClassMetaData.js');
+var EClassLevel = require('./EClassLevel.js');
 
 var eClassFeatureTree = function() {
 	var level 
 
-	this.incrementCurrentLevel = function() {
-		var tmp = level.top();
+	this.incrementLevel = function(l) {
+		var tmp = l.top();
 		tmp++;
-		level.pop();
-		level.push(tmp);
+		l.pop();
+		l.push(tmp);
 	}
 
 	this.create = function(list) {
 		var root = new EClassFeature(-1,0,"ROOT", "ROOT");
-		var lastFeature = root;
-		var stackParentId = new Stack();
-		level = new Stack();
+		var eClassLevel = new EClassLevel();
+
+		var waitingBlocks = [];
+		var nBlockIndex = -1;
+		var state = 'waitcardinal';
+		var nextBlockLevel = undefined;
+		var blockLevelCount = 0;
 
 		for (var i=0; i<list.length; i++) {
 			var f = list[i];
 
-//			console.log(level.asList().join());
-			if (lastFeature.id == f.parentId) {
-				// one level below
-				level.push(1);
-				stackParentId.push(f.parentId);
-			}
-			else if (lastFeature.parentId == f.parentId) {
-				// same level
-				// increment current level
-				incrementCurrentLevel();
-			}
-			else {
-				// higher level
-				var cnt = 0;
-				while (!stackParentId.isEmpty()  &&  stackParentId.top() != f.parentId) {
-					stackParentId.pop();
+			eClassLevel.setFeature(f);
 
-					// console.log(f.parentId, stackParentId.top(), cnt);
+			f.level = eClassLevel.asArray().join('.');
 
-					cnt++;
-				}
-				//console.log(f.ftname);
-				//console.log(cnt);
-				while (cnt > 0) {
-					level.pop();
-					cnt--;
-				}
-				incrementCurrentLevel();
+			if (f.level == 34) {
+				var x = "hallo";
 			}
-			f.level = level.asList().join('.');
-//			console.log(level.asList());
+
+/*
+			if (state == 'waitnextblock') {
+				if (level.count() < blockLevelCount) {
+					nBlockIndex = -1;
+					state = 'waitcardinal';
+				}
+				else if (f.level == nextBlockLevel) {
+					if (waitingBlocks.indexOf(f.ftid) != -1) {
+						nBlockIndex++;
+						incrementLevel(nextBlockLevel);
+					}
+					else {
+						nBlockIndex = -1;
+						state = 'waitcardinal';
+					}
+				}
+			}
+
+			if (state == 'waitcardinal') {
+				if (f.type == "cardinal") {
+					if (f.getValue() > 0) {
+						waitingBlocks = EClassMetaData.getBlockIdentifers(f.ftid);
+						state = 'waitblock';
+						nBlockIndex = -1;						
+					}
+				}
+			}
+
+			if (state == 'waitblock') {
+				if (f.type == "block") {
+					if (waitingBlocks.indexOf(f.ftid) != -1) {
+						nBlockIndex++;
+						nextBlockLevel = level;
+						blockLevelCount = level.count();
+						incrementLevel(nextBlockLevel);
+						state = 'waitnextblock';
+					}
+				}
+			}
+
+			if (nBlockIndex >= 0) {
+				f.index = nBlockIndex;
+			}
+*/
 
 			lastFeature = f;
-
 			root.addSubNode(f);
 		};
 

@@ -26,7 +26,7 @@ Stack.prototype.isEmpty = function() {
 	return this.level.length == 0;
 };
 
-Stack.prototype.asList = function() {
+Stack.prototype.asArray = function() {
 	return this.level;
 }
 
@@ -38,7 +38,7 @@ Stack.prototype.incTop = function() {
 		this.pop();
 		this.push(v);		
 	}
-}
+};
 
 Stack.prototype.count = function() {
 	return this.level.length;
@@ -62,3 +62,4 @@ Stack.prototype.contains = function(other) {
 };
 
 module.exports = Stack;
+

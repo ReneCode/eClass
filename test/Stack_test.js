@@ -153,7 +153,7 @@ describe('Stack', function() {
 			assert.equal(false, s1.contains(s2));
 		});
 
-	});
+	});  // contains
 
 
 });

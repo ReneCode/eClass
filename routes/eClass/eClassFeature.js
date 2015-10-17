@@ -1,12 +1,13 @@
 
-var EClassFeatue = function (id, parentId, ftid, ftname) {
+var EClassFeature = function (id, parentId, ftid, ftname) {
 	this.id = id;
 	this.parentId = parentId;
 	this.ftid = ftid;
 	this.ftname = ftname;
+	this.fvalues = [];
 };
 
-EClassFeatue.prototype.addSubNode = function(subnode) {
+EClassFeature.prototype.addSubNode = function(subnode) {
 	if (this.hasOwnProperty('subnode')) {
 		this.subnode.push(subnode);
 	}
@@ -15,5 +16,11 @@ EClassFeatue.prototype.addSubNode = function(subnode) {
 	}
 }
 
+EClassFeature.prototype.getValue = function() {
+	if (this.fvalues.length > 0) 
+	{
+		return this.fvalues[0];
+	}
+}
 
-module.exports = EClassFeatue;
+module.exports = EClassFeature;
