@@ -40,12 +40,12 @@ li {
 li > span.level {
 	position: absolute;
 	display: inline;
-	left: 100px;
+	left: 150px;
 }
 li > span.name {
 	position: absolute;
 	display: inline;
-	left: 200px;
+	left: 250px;
 }
 
 li > span.value {

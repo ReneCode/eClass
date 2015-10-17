@@ -2,16 +2,9 @@ var EClassFeature = require('./eClassFeature.js')
 var Stack = require('./Stack.js');
 var EClassMetaData = require('./eClassMetaData.js');
 var EClassLevel = require('./EClassLevel.js');
+var clone = require('clone');
 
 var eClassFeatureTree = function() {
-	var level 
-
-	this.incrementLevel = function(l) {
-		var tmp = l.top();
-		tmp++;
-		l.pop();
-		l.push(tmp);
-	}
 
 	this.create = function(list) {
 		var root = new EClassFeature(-1,0,"ROOT", "ROOT");
@@ -20,18 +13,62 @@ var eClassFeatureTree = function() {
 		var waitingBlocks = [];
 		var nBlockIndex = -1;
 		var state = 'waitcardinal';
+		var blockLevel = undefined;
+
 		var nextBlockLevel = undefined;
 		var blockLevelCount = 0;
 
 		for (var i=0; i<list.length; i++) {
 			var f = list[i];
 
+
 			eClassLevel.setFeature(f);
 
 			f.level = eClassLevel.asArray().join('.');
 
-			if (f.level == 34) {
+			if (f.level == "37"	) {
 				var x = "hallo";
+			}
+
+
+
+			if (state == 'waitnextblock') {
+				if (eClassLevel.contains(blockLevel)) {
+					// inside the block, continue with the block-content
+				}
+				else {
+					// this would be the next block (second, third, ...)
+					blockLevel.incTop();
+					if (eClassLevel.sameLevel(blockLevel)  &&  waitingBlocks.indexOf(f.ftid) != -1) {
+						// next block found
+						nBlockIndex++;
+					}
+					else {
+						nBlockIndex = -1;
+						blockLevel = undefined;
+						state = 'waitcardinal';
+					}
+				}
+			}
+
+			if (state == 'waitcardinal') {
+				if (f.type == "cardinal") {
+					if (f.getValue() > 0) {
+						// only wait for the block, if there will be more than 0
+						waitingBlocks = EClassMetaData.getBlockIdentifers(f.ftid);
+						state = 'waitblock';
+						nBlockIndex = -1;	
+						f.ftid += state;					
+					}
+				}
+			}
+			else if (state == 'waitblock') {
+				if (waitingBlocks.indexOf(f.ftid) != -1) {
+					// block found
+					nBlockIndex++;
+					blockLevel = clone(eClassLevel);
+					state = 'waitnextblock';
+				}
 			}
 
 /*
@@ -52,15 +89,6 @@ var eClassFeatureTree = function() {
 				}
 			}
 
-			if (state == 'waitcardinal') {
-				if (f.type == "cardinal") {
-					if (f.getValue() > 0) {
-						waitingBlocks = EClassMetaData.getBlockIdentifers(f.ftid);
-						state = 'waitblock';
-						nBlockIndex = -1;						
-					}
-				}
-			}
 
 			if (state == 'waitblock') {
 				if (f.type == "block") {
@@ -74,10 +102,12 @@ var eClassFeatureTree = function() {
 				}
 			}
 
+*/
+
 			if (nBlockIndex >= 0) {
 				f.index = nBlockIndex;
 			}
-*/
+
 
 			lastFeature = f;
 			root.addSubNode(f);
