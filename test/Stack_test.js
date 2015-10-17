@@ -155,6 +155,28 @@ describe('Stack', function() {
 
 	});  // contains
 
+	describe('#equal', function() {
+		it('should be equal on two identical stacks', function() {
+			var s1 = new Stack();
+			s1.push(3);
+			s1.push(5);
+			var s2 = new Stack();
+			s2.push(3);
+			s2.push(5);
+			assert.equal(true, s1.equal(s2));
+		});
+
+		it('should be not equal on two different stacks', function() {
+			var s1 = new Stack();
+			s1.push(3);
+			s1.push(57);
+			var s2 = new Stack();
+			s2.push(3);
+			s2.push(5);
+			assert.equal(false, s1.equal(s2));
+		});
+	}); // equal
+
 
 });
 

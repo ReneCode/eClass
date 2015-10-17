@@ -34,7 +34,7 @@ var eClassToJSON = (function() {
 		try {
 			var stream = fs.createReadStream(filename);
 			stream.on('end', function() {
-				console.log("finish");
+//				console.log("finish");
 				stream.close();
 				var productList = eClassParser.getProductList();
 				if (callback) {

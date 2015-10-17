@@ -1,8 +1,18 @@
 // Stack
 
 var Stack = function() {
-	this.level = [];
+	if (!(this instanceof Stack)) {
+		return new Stack();
+	}
+	// damit ist Stack vererb-bar, abgeleitete klasse muss
+	// im constructor dann this.init() aufrufen.
+	this.init();
 };
+
+// "constructor-init function"
+Stack.prototype.init = function() {
+	this.level = [];
+}
 
 Stack.prototype.push = function(v) {
 	this.level.push(v);
@@ -59,6 +69,22 @@ Stack.prototype.contains = function(other) {
 		return true;
 	}
 	return false;
+};
+
+Stack.prototype.equal = function(other) {
+	var cnt = this.level.length;
+	if (cnt != other.level.length) {
+		return false;
+	}
+	else {
+		for (var i=0; i<cnt; i++) {
+			if (this.level[i] !== other.level[i]) {
+				return false;
+			}
+		}
+		// all elements are equal
+		return true;
+	}
 };
 
 module.exports = Stack;

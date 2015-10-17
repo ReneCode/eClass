@@ -3,22 +3,30 @@
 var Stack = require('./Stack.js');
 var EClassFeature = require('./eClassFeature.js');
 
-var EClassLevel = function () {
-	this.level = new Stack;
+var EClassLevel = function (src) {
+	if (!(this instanceof EClassLevel)) {
+		return new EClassLevel();
+	}
+	// basis-init aufrufen !!
+	this.init();
+//	this.level = new Stack;
 	this.stackParentId = new Stack();
 	this.lastFeature = undefined; // new EClassFeature(-1,0,"ROOT", "ROOT");
 };
 
+EClassLevel.prototype = new Stack();
+EClassLevel.prototype.constructor = EClassLevel;
+
 EClassLevel.prototype.setFeature = function(f) {
 	if (this.lastFeature == undefined || this.lastFeature.id == f.parentId) {
 		// one level below
-		this.level.push(1);
+		this.push(1);
 		this.stackParentId.push(f.parentId);
 	}
 	else if (this.lastFeature.parentId == f.parentId) {
 		// same level
 		// increment current level
-		this.level.incTop();
+		this.incTop();
 	}
 	else {
 		// higher level
@@ -28,10 +36,10 @@ EClassLevel.prototype.setFeature = function(f) {
 			cnt++;
 		}
 		while (cnt > 0) {
-			this.level.pop();
+			this.pop();
 			cnt--;
 		}
-		this.level.incTop();
+		this.incTop();
 	}
 
 	// only copy that properties
@@ -45,31 +53,9 @@ EClassLevel.prototype.setFeature = function(f) {
 
 
 EClassLevel.prototype.sameLevel = function(other) {
-	var cnt = this.level.length;
-	if (cnt != other.level.length) {
-		return false;
-	}
-	else {
-		for (var i=0; i<cnt; i++) {
-			if (this.level[i] !== other.level[i]) {
-				return false;
-			}
-		}
-		// all elements are equal
-		return true;
-	}
+	return this.equal(other);
 };
-EClassLevel.prototype.contains = function(other) {
-	return this.level.contains(other.level);
-}
 
-EClassLevel.prototype.incTop = function() {
-	this.level.incTop();
-}
-
-EClassLevel.prototype.asArray = function() {
-	return this.level.asArray();
-}
 
 module.exports = EClassLevel;
 

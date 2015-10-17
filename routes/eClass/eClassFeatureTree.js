@@ -55,6 +55,13 @@ var eClassFeatureTree = function() {
 					// block found
 					nBlockIndex++;
 					blockLevel = clone(eClassLevel);
+					// !!! hack, because clone() did not work propetly
+					// copy the Stack() data
+					blockLevel.level = clone(eClassLevel.level);
+
+// console.log("eClassLevel", eClassLevel.asArray());
+// console.log("blockLevel", blockLevel.asArray());
+
 					state = 'waitnextblock';
 				}
 			}
