@@ -62,10 +62,10 @@ describe('Stack', function() {
 		});
 	});
 
-	describe('#asList', function() {
+	describe('#asArray', function() {
 		it('should return empty array on new stack', function() {
 			var s = new Stack();
-			var l = s.asList();
+			var l = s.asArray();
 			assert.deepEqual([], l);
 		});
 
@@ -74,7 +74,7 @@ describe('Stack', function() {
 			s.push('a');
 			s.push(42);
 			s.push('x')
-			assert.deepEqual(['a', 42, 'x'], s.asList());
+			assert.deepEqual(['a', 42, 'x'], s.asArray());
 		});
 
 		it('should return list joined as string', function() {
@@ -82,7 +82,7 @@ describe('Stack', function() {
 			s.push(5);
 			s.push(6);
 			s.push(8);
-			assert.equal('5.6.8', s.asList().join('.'));
+			assert.equal('5.6.8', s.asArray().join('.'));
 		});
 	});
 
@@ -94,7 +94,7 @@ describe('Stack', function() {
 			s.incTop();
 			s.push(10);
 			s.incTop();
-			assert.equal('1.3.11', s.asList().join('.'));
+			assert.equal('1.3.11', s.asArray().join('.'));
 		});
 	});
 
@@ -104,8 +104,8 @@ describe('Stack', function() {
 			s1.push('a');
 			var s2 = clone(s1);
 			s2.push('b');
-			assert.deepEqual(['a'], s1.asList());
-			assert.deepEqual(['a','b'], s2.asList());
+			assert.deepEqual(['a'], s1.asArray());
+			assert.deepEqual(['a','b'], s2.asArray());
 		});
 	});
 

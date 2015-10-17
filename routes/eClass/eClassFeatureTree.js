@@ -21,8 +21,6 @@ var eClassFeatureTree = function() {
 			eClassLevel.setFeature(f);
 			f.level = eClassLevel.asArray().join('.');
 
-
-
 			if (state == 'waitnextblock') {
 				if (eClassLevel.contains(blockLevel)) {
 					// inside the block, continue with the block-content
