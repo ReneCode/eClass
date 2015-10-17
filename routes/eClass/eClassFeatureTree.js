@@ -15,20 +15,11 @@ var eClassFeatureTree = function() {
 		var state = 'waitcardinal';
 		var blockLevel = undefined;
 
-		var nextBlockLevel = undefined;
-		var blockLevelCount = 0;
-
 		for (var i=0; i<list.length; i++) {
 			var f = list[i];
-
-
+			// create level (7.2.5.3)
 			eClassLevel.setFeature(f);
-
 			f.level = eClassLevel.asArray().join('.');
-
-			if (f.level == "37"	) {
-				var x = "hallo";
-			}
 
 
 
@@ -58,7 +49,6 @@ var eClassFeatureTree = function() {
 						waitingBlocks = EClassMetaData.getBlockIdentifers(f.ftid);
 						state = 'waitblock';
 						nBlockIndex = -1;	
-						f.ftid += state;					
 					}
 				}
 			}
@@ -71,45 +61,12 @@ var eClassFeatureTree = function() {
 				}
 			}
 
-/*
-			if (state == 'waitnextblock') {
-				if (level.count() < blockLevelCount) {
-					nBlockIndex = -1;
-					state = 'waitcardinal';
-				}
-				else if (f.level == nextBlockLevel) {
-					if (waitingBlocks.indexOf(f.ftid) != -1) {
-						nBlockIndex++;
-						incrementLevel(nextBlockLevel);
-					}
-					else {
-						nBlockIndex = -1;
-						state = 'waitcardinal';
-					}
-				}
-			}
-
-
-			if (state == 'waitblock') {
-				if (f.type == "block") {
-					if (waitingBlocks.indexOf(f.ftid) != -1) {
-						nBlockIndex++;
-						nextBlockLevel = level;
-						blockLevelCount = level.count();
-						incrementLevel(nextBlockLevel);
-						state = 'waitnextblock';
-					}
-				}
-			}
-
-*/
 
 			if (nBlockIndex >= 0) {
-				f.index = nBlockIndex;
+				f.index = "[" + nBlockIndex + "]";
 			}
 
 
-			lastFeature = f;
 			root.addSubNode(f);
 		};
 
