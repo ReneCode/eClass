@@ -1,5 +1,6 @@
 var path = require('path');
 var eClassToJSON = require('./eClass/eClassToJSON.js');
+var fs = require('fs');
 
 
 var showHomePage = function(req, res, next) {
@@ -7,21 +8,35 @@ var showHomePage = function(req, res, next) {
 }
 
 var showContent = function(req, res, next) {
+	var fn = "";
+	var readName = "";
+
+	fn = 'PxC_Export_eCl@ss-80-2013-12-19_deu.xml';
+	fn = 'data.xml';
 
 
-	var file = 'PxC_Export_eCl@ss-80-2013-12-19_deu.xml';
-	file = 'data.xml';
-	var fn = path.join(__dirname, '..', 'data', file);
+	if (req.file != undefined) {
+		fn = path.join(__dirname, "..", req.file.destination, req.file.filename);
+		readName = req.file.originalname;
+	}
 
-//	console.dir(eClassToJSON);
 	eClassToJSON.convert(fn, function(obj) {
+		obj.fn = readName;
 		res.render('content', obj );
 	});
 }
 
+
+
+
 function route(app) {
 	app.get('/', showHomePage);
 	app.get('/content', showContent);
+
+
+	app.post('/upload', showContent);
+
+//	app.post('/upload', upload);
 //	app.get('/', showContent);
 }
 

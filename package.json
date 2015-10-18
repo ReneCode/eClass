@@ -10,9 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.14.1",
     "clone": "^1.0.2",
-    "express": "3.4.8",
+    "express": "^4.13.3",
     "jade": "*",
-    "node-expat": "^2.3.10"
+    "morgan": "^1.6.1",
+    "multer": "^1.0.6",
+    "node-expat": "^2.3.10",
+    "serve-static": "^1.10.0"
   }
 }
