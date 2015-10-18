@@ -1,7 +1,7 @@
 var EClassFeature = require('./eClassFeature.js')
 var Stack = require('./Stack.js');
 var EClassMetaData = require('./eClassMetaData.js');
-var EClassLevel = require('./EClassLevel.js');
+var EClassLevel = require('./eClassLevel.js');
 var clone = require('clone');
 
 var eClassFeatureTree = function() {
