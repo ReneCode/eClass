@@ -1,4 +1,11 @@
 // eClassMetaData
+
+var sqlite3 = require('sqlite3').verbose();
+var path = require('path');
+
+var fn = path.join(__dirname, '../../data/clasystem.db');
+var db = new sqlite3.Database(fn);
+
 var idsCardinality = [
 	"AAM631",
 	"AAM647",
@@ -1244,8 +1251,21 @@ var isCardinality = function(featureId) {
 };
 
 
+var getBasicProperties = function(eclass, callback) {
+	var lst = [];
+	var sql = "SELECT IdCC FROM Class_de_DE WHERE CodedName like '" + eclass + "%' ORDER BY IdCC";
+	db.each(sql, function(err, row) {
+		if (err) throw(err);
+		lst.push(row.IdCC);
+	}, function(err, nRows) {
+		callback(lst);
+	} 
+	); 
+}
 
 module.exports.isCardinality = isCardinality;
 module.exports.getBlockIdentifers = getBlockIdentifers;
 module.exports.isBlockFeature = isBlockFeature;
+module.exports.getBasicProperties = getBasicProperties;
+
 

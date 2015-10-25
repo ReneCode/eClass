@@ -42,7 +42,16 @@ describe('EClassMetaData', function() {
 		it('should not find none block property', function() {
 			assert.equal( EClassMetaData.isBlockFeature('AAQ177'), false);
 		});
+	});
 
+	describe('getBlockIdentifers', function() {
+		// async methode
+		it('should return properties', function(done) {
+			EClassMetaData.getBasicProperties('27040302', function(rows) {
+				assert.deepEqual(['ADN190005'], rows);
+				done();
+			});
+		});
 	});
 
 
