@@ -29,9 +29,16 @@ var showContent = function(req, res, next) {
 
 
 var showProperties = function(req, res, next) {
-	var cc = req.query.eclass;
-	EClassMetaData.getBasicProperties(cc, function(rows) {
-		res.render('properties', { cc:cc, props: rows } );
+	var id = req.query.id;
+	EClassMetaData.getFeatureProperties(id, function(rows) {
+		if (rows.length > 0) {
+			res.render('properties', { searchId:id, type:"feature", properties: rows });
+		}
+		else {
+			EClassMetaData.getClassProperties(id, function(rows) {
+				res.render('properties', { searchId:id, type:"class", properties: rows });
+			});
+		}
 	});
 }
 

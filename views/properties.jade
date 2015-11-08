@@ -2,7 +2,28 @@ extends layout
 
 block content
 
-  h3 properties of Classification: #{cc}*
+  div.container
 
-  each val in props
-    li #{val}
+    a(href="/") Home
+    h3 Properties of #{type}
+
+    div.well
+      form(action="/properties", method="GET")
+        input(type="text", name="id" value="#{searchId}")
+        input(type="submit", value="show feature/class")
+
+    table.table.table-hover.table-condensed
+      thead
+        tr
+          th Identifier
+          th Name
+          th DataType
+          th Descripton
+      tbody
+        each prop in properties
+          tr
+            td #{prop.Identifier}
+            td #{prop.Name}
+            td #{prop.DataType}
+            td 
+              small #{prop.Definition}

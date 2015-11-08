@@ -1259,13 +1259,53 @@ var getBasicProperties = function(eclass, callback) {
 		lst.push(row.IdCC);
 	}, function(err, nRows) {
 		callback(lst);
-	} 
-	); 
+	}); 
+}
+
+var getFeatureProperties = function(identifer, callback) {
+	var props = [];
+	var sql = "select Identifier, PreferredName, Definition, DataType, Block, Cardinality from prop_de_de where Identifier like '%" + identifer + "%'";
+	db.each(sql, function(err, row) {
+		if (err) throw err;
+		console.log("|", row.Block, "|");
+		var dataType = "";
+		if (row.Block == 1) {
+			dataType += "Block";
+		}
+		if (row.Cardinality == 1) {
+			if (dataType !== "") {
+				dataType += " "
+			}
+			dataType += "Cardinal";
+
+		}
+		props.push( { Identifier: row.Identifier,
+								  Name: row.PreferredName,
+								  Definition: row.Definition,
+								  DataType: dataType});
+	}, function(err, nRows) {
+		callback(props);
+	});
+}
+
+
+var getClassProperties = function(identifer, callback) {
+	var props = [];
+	var sql = "select Identifier, PreferredName, Definition from class_de_de where Identifier like '%" + identifer + "%'";
+	db.each(sql, function(err, row) {
+		if (err) throw err;
+		props.push( { Identifier: row.Identifier,
+								  Name: row.PreferredName,
+								  Definition: row.Definition});
+	}, function(err, nRows) {
+		callback(props);
+	});
 }
 
 module.exports.isCardinality = isCardinality;
 module.exports.getBlockIdentifers = getBlockIdentifers;
 module.exports.isBlockFeature = isBlockFeature;
 module.exports.getBasicProperties = getBasicProperties;
-
+module.exports.getFeatureProperties = getFeatureProperties;
+module.exports.getClassProperties = getClassProperties;
 

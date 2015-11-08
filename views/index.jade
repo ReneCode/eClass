@@ -1,15 +1,17 @@
 extends layout
 
 block content
+  div.container
 
-	h4 Welcome to the world of eCl@ss
+    h4 Welcome to the world of eCl@ss
 
-	p Show eCl@ss file:
-	form(action="/upload", method="POST", enctype="multipart/form-data")
-		input(type="file", name="singleInputFileName")
-		input(type="submit", value="ok")
+    p Show eCl@ss file:
+    form(action="/upload", method="POST", enctype="multipart/form-data")
+      input(type="file", name="singleInputFileName")
+      input(type="submit", value="ok")
 
-	p Query eCl@ss properties:
-	form(action="/properties", method="GET")
-		input(type="text", name="eclass")
-		input(type="submit", value="show properties")
+    p Query eCl@ss Features:
+    form(action="/properties", method="GET")
+      input(type="text", name="id" value="AAQ666")
+      input(type="submit", value="show feature/class")
+      
