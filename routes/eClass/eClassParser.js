@@ -4,20 +4,21 @@ var eClassFeatureTree = require('./eClassFeatureTree.js')
 var EClassFeature = require('./eClassFeature.js')
 var EClassMetaData = require('./eClassMetaData.js');
 
-var eClassParser = function (callback) {
+var eClassParser = (function () {
 	var fvalues = [];
-	var ftid = undefined;
-	var ftname = undefined;
-	var id = undefined;
-	var parentId = undefined;
-	var valueIdRef = undefined;
-	var fvalueDetails = undefined;
-	var funit = undefined;
+	var ftid;
+	var ftname;
+	var id;
+	var parentId;
+	var valueIdRef;
+	var fvalueDetails;
+	var funit;
+	var groupId;
 
 	var productList = [];
 	var productNr = 0;
-	var featureList = undefined;
-	var attribute = undefined;
+	var featureList;
+	var attribute;
 
 
 	this.getProductList = function() {
@@ -32,7 +33,8 @@ var eClassParser = function (callback) {
 		else if (name == "FEATURE") {
 			startFeature();
 		}
-		else if (name == "FVALUE") {
+		else if (name == "REFERENCE_FEATURE_GROUP_ID") {
+			startGroup();
 		}
 
 //		console.log("startElement:" + name);
@@ -72,6 +74,9 @@ var eClassParser = function (callback) {
 		}
 		else if (name == "FUNIT") {
 			funit = lastText;
+		}
+		else if (name == "REFERENCE_FEATURE_GROUP_ID") {
+			groupId = eClassFeatureParser.parseId(lastText);
 		}
 	}
 
@@ -129,12 +134,12 @@ var eClassParser = function (callback) {
 
 	this.startProduct = function() {
 		productNr++;
-//		console.log("--------- startProduct:" + productNr);
+		console.log("--------- startProduct:" + productNr);
 		featureList = [];
 	}
 	this.endProduct = function() {
 		var featureTree = eClassFeatureTree.create(featureList);
-//		console.log( JSON.stringify(featureTree, null, 2) );
+		console.log( JSON.stringify(featureTree, null, 2) );
 		productList.push(featureTree);
 		if (callback) {
 			//callback(featureTree);
@@ -151,7 +156,7 @@ var eClassParser = function (callback) {
 		// }
 	};	
 
-};
+})();
 
 module.exports = eClassParser;
 

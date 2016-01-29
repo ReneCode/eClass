@@ -23,4 +23,16 @@ EClassFeature.prototype.getValue = function() {
 	}
 }
 
+EClassFeature.prototype.getFeatureId = function() {
+	return this.ftid;	
+};
+
+EClassFeature.prototype.getParentId = function() {
+	return this.parentId;	
+};
+
+EClassFeature.prototype.getId = function() {
+	return this.id;	
+};
+
 module.exports = EClassFeature;

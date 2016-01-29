@@ -6,7 +6,7 @@ block content
     h4 Welcome to the world of eCl@ss
 
     p Show eCl@ss file:
-    form(action="/upload", method="POST", enctype="multipart/form-data")
+    form(action="/upload?type=xml", method="POST", enctype="multipart/form-data")
       input(type="file", name="singleInputFileName")
       input(type="submit", value="ok")
 

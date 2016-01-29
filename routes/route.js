@@ -12,10 +12,6 @@ var showContent = function(req, res, next) {
 	var fn = "";
 	var readName = "";
 
-	fn = 'PxC_Export_eCl@ss-80-2013-12-19_deu.xml';
-	fn = 'data.xml';
-
-
 	if (req.file != undefined) {
 		fn = path.join(__dirname, "..", req.file.destination, req.file.filename);
 		readName = req.file.originalname;

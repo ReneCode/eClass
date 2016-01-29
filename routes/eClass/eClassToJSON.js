@@ -1,5 +1,4 @@
 // eClassToJSON.js
-"use strict_"
 
 
 var eClassToJSON = (function() {
@@ -11,7 +10,7 @@ var eClassToJSON = (function() {
 		var fs = require('fs');
 		var parser = new expat.Parser('UTF-8');
 
-		var eClassParser = require('./eClassParser.js')(callback);
+		var eClassParser = require('./eClassParser.js');
 
 		console.log("file:" + filename);
 
