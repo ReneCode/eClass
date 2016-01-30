@@ -142,9 +142,10 @@ function EClassReadContent()
 
 EClassReadContent.prototype.finishFeature = function(f) {
 	this.cardinality.setFeature(f);
-    f.level = this.cardinality.getFullLevel().join('.');
-	var path = this.cardinality.getFeaturePath().join('.');
-	console.log(f.level + " / " + path  + " / "  + f.getValue());
+  f.level = this.cardinality.getFullLevel().join('.');
+	var path = this.cardinality.getFeaturePath().join('|');
+	var blockLevel = this.cardinality.getCurrentIndex();
+	console.log(blockLevel + '   ' + f.level + "   " + path  + "   "  + f.getValue());
 };
 
 EClassReadContent.prototype.finishProduct = function(p) {
