@@ -1,6 +1,151 @@
-
-var EClassLevel = require('./eClassLevel.js')
+var assert = require('assert');
+var EClassLevel = require('./eClassLevel.js');
 var eClassMetaData = require('./eClassMetaData.js');
+
+/*
+var BlockIndexItem = function(names) {
+    this.names = names;
+    this.index = -1;
+};
+
+BlockIndexItem.prototype.incIndex = function() {
+    this.index++;
+};
+
+BlockIndexItem.prototype.getIndex = function() {
+    return this.index;
+};
+
+BlockIndexItem.prototype.sameBlock = function(other) {
+    for (var i=0; i<this.names.length; i++) {
+        if (this.names[i] == other) {
+            // ja, dabei
+            return true;
+        }
+    }
+    // nicht dabei
+    return false;
+};
+
+var EClassCardinality = function() {
+    this.blockList = [ new BlockIndexItem([]) ];
+    this.featureLevel = new EClassLevel();
+    this.currentFullLevel = [];
+};
+
+EClassCardinality.prototype.isCardinalFeature = function(featureId) {
+    return eClassMetaData.isCardinality(featureId);
+};
+
+EClassCardinality.prototype.getCorrospondingBlocks = function(featureId) {
+    return eClassMetaData.getBlockIdentifers(featureId);
+};
+
+EClassCardinality.prototype.addWaitingBlock = function(waitingBlocks) {
+    this.blockList.push( new BlockIndexItem(waitingBlocks) );
+};
+
+EClassCardinality.prototype.waitingForThatBlock = function(featureId) {
+    var countPop = 0;
+    for (var idx=this.blockList.length-1; idx >= 0; idx--, countPop++) {
+        if (this.blockList[idx].sameBlock(featureId)) {
+            return [true, countPop];
+        }
+    }
+    return [false, countPop];
+};
+
+EClassCardinality.prototype.popWaitingBlock = function(countPop) {
+    for (var i=0; i<countPop; i++) {
+        this.blockList.pop();
+    }
+};
+
+EClassCardinality.prototype.incCurrentBlockIndex = function() {
+    this.blockList[this.blockList.length-1].incIndex();
+};
+
+
+EClassCardinality.prototype.getCurrentIndex = function() {
+    return this.blockList[this.blockList.length-1].getIndex();
+};
+
+EClassCardinality.prototype.getCurrentIndex = function() {
+    var index = [];
+    for (var i=0; i<this.blockList.length; i++) {
+        index.push(this.blockList[i].getIndex());
+    }
+    return index;
+};
+
+EClassCardinality.prototype.getFeaturePath = function() {
+    return this.featureLevel.getFeaturePath();
+};
+
+EClassCardinality.prototype.getFullLevel = function() {
+    return this.featureLevel.getFullLevel();
+};
+
+EClassCardinality.prototype.belowFullLevel(featureFullLevel) {
+    var countFullLevelPop = 0;
+    for (var i=this.currentFullLevel.length-1; i>=0; i--, countFullLevelPop++) {
+        if (featureFullLevel.indexOf(this.currentFullLevel[i]) >= 0) {
+            return countFullLevelPop;            
+        }
+    }
+    return -1;
+}
+
+EClassCardinality.prototype.popFullLevel(countPopFullLevel) {
+    for (var i=0; i<countFullLevelPop; i++) {
+        this.currentFullLevel.pop();
+    }
+}
+
+EClassCardinality.prototype.setFeature = function(f) {
+    this.featureLevel.setFeature(f);
+    
+    var featureId = f.getFeatureId();
+    if (featureId == "AAN546") {
+        var i = 45;
+    }
+
+    var featureFullLevel = this.featureLevel.getFullLevel().join('.');
+    
+    
+    var aRet = this.waitingForThatBlock(featureId);
+    var countPop = aRet[1];
+    var foundWaitingBlock = aRet[0]
+    if (foundWaitingBlock) {
+        this.popWaitingBlock(countPop);
+        assert(this.blockList[this.blockList.length-1].sameBlock(featureId));
+        this.incCurrentBlockIndex()
+        this.currentFullLevel.push(featureFullLevel);
+    }
+    else {
+        
+        
+        var countPopFullLevel = this.belowFullLevel(featureFullLevel);
+        if (countPopFullLevel >= 0) {
+            // unterhalb des aktuellen Blocks
+            this.popFullLevel(countPopFullLevel);
+        } 
+        else {
+            this.popWaitingBlock(countPop);        
+        }
+    }
+    if (this.isCardinalFeature(featureId)) {
+        if (f.getValue() > 0) {
+            var waitingBlock = this.getCorrospondingBlocks(featureId);
+            this.addWaitingBlock(waitingBlock);
+        }
+    }
+};
+*/
+
+///////////////////////////////////////////////
+
+
 
 var STATE_UNDEFINED = 0;
 var STATE_WAIT_CARDINAL = 1;
@@ -90,7 +235,8 @@ EClassCardinality.prototype.setFeature = function(f) {
     }
     if (this.state == STATE_WAIT_CARDINAL) {
     	if (this.isCardinalFeature(f.getFeatureId())) {
-    		if (f.getValue() > 0) {
+            // only count on Blocks that will be repeated more than once !
+    		if (f.getValue() > 1) {
     			this.getCorrospondingBlocks(f.getFeatureId());
     			this.state = STATE_WAIT_BLOCK;
     			this.blockIndex = -1;

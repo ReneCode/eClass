@@ -6,7 +6,7 @@
 var EClassReadContent = require('./eClassReadContent.js');
 
 if (!process.argv[2]) {
-	process.argv.push('./try/ESPRIT_TEST.xml');
+	process.argv.push('./try/ESPRIT_Anschluss.xml');
 }
 
 if (process.argv.length <= 2) {

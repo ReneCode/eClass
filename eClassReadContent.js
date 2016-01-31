@@ -3,7 +3,8 @@ var eClassFeatureParser = require('./routes/eClass/eClassFeatureParser.js');
 var EClassFeature = require('./routes/eClass/eClassFeature.js');
 var EClassMetaData = require('./routes/eClass/eClassMetaData.js');
 var EClassCardinality = require('./routes/eClass/eClassCardinality.js');
-
+var EClassCardinalityOld = require('./routes/eClass/eClassCardinality-old.js');
+var assert = require('assert');
 
 function EClassContentParser(option) {
 	this.featureList = [];    
@@ -130,7 +131,7 @@ EClassContentParser.prototype.endProduct = function() {
         this.cbProduct(this.featureList);
     }
     this.featureList = [];
-}
+};
 
 ///////////////////////////////
 
@@ -138,14 +139,25 @@ EClassContentParser.prototype.endProduct = function() {
 function EClassReadContent()
 {
 	this.cardinality = new EClassCardinality();
+	this.cardinalityOld = new EClassCardinalityOld();
 }
 
 EClassReadContent.prototype.finishFeature = function(f) {
 	this.cardinality.setFeature(f);
-  f.level = this.cardinality.getFullLevel().join('.');
+	this.cardinalityOld.setFeature(f);
+
+  var level = this.cardinality.getFullLevel().join('.');
 	var path = this.cardinality.getFeaturePath().join('|');
 	var blockLevel = this.cardinality.getCurrentIndex();
-	console.log(blockLevel + '   ' + f.level + "   " + path  + "   "  + f.getValue());
+
+  var levelOld = this.cardinalityOld.getFullLevel().join('.');
+	var pathOld = this.cardinalityOld.getFeaturePath().join('|');
+	var blockLevelOld = this.cardinalityOld.getCurrentIndex();
+
+	assert(level == levelOld);
+	assert(path == pathOld);
+
+	console.log(blockLevel + ' # ' + blockLevelOld + "   " + path + "  "  + level + "   "  + f.ftname + " = "+ f.getValue());
 };
 
 EClassReadContent.prototype.finishProduct = function(p) {
